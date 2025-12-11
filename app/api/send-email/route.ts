@@ -17,7 +17,7 @@ export async function POST(req: Request) {
     // ---- MAIL CONTENT ----
     const mailOptions = {
       from: `"Çocuk Tribünü İletişim" <${process.env.MAIL_USER}>`,
-      to: "iletisim@cocuktribunu.org", // BURAYA MESAJLARIN GELMESİNİ İSTEDİĞİN MAILİ YAZ
+      to: "ozenshopping.com@gmail.com", // BURAYA MESAJLARIN GELMESİNİ İSTEDİĞİN MAILİ YAZ
       subject: `Yeni İletişim Mesajı – ${topic}`,
       text: `
 Ad: ${name}

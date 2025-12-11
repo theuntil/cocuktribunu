@@ -92,14 +92,11 @@ export default function Contact() {
               <p className="font-medium">iletisim@cocuktribunu.org</p>
             </div>
 
-            <div>
-              <p className="text-neutral-500 dark:text-neutral-400 text-xs mb-1">Telefon</p>
-              <p className="font-medium">+90 (XXX) XXX XX XX</p>
-            </div>
+            
 
             <div>
               <p className="text-neutral-500 dark:text-neutral-400 text-xs mb-1">Çalışma Saatleri</p>
-              <p className="font-medium">Hafta içi 09:00 – 18:00</p>
+              <p className="font-medium">Hafta içi 09:00 – 20:00</p>
             </div>
 
           </div>
