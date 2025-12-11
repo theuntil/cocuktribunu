@@ -73,7 +73,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link 
-                  href="/about"
+                  href="/hakkimizda"
                   className="text-neutral-600 dark:text-neutral-300 hover:text-[#006039] dark:hover:text-[#4D96FF] transition"
                 >
                   Hakkımızda
@@ -81,7 +81,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link 
-                  href="/policies"
+                  href="/politikalar"
                   className="text-neutral-600 dark:text-neutral-300 hover:text-[#006039] dark:hover:text-[#4D96FF] transition"
                 >
                   Politikalar
@@ -89,7 +89,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link 
-                  href="/contact"
+                  href="/iletisim"
                   className="text-neutral-600 dark:text-neutral-300 hover:text-[#006039] dark:hover:text-[#4D96FF] transition"
                 >
                   İletişim
@@ -120,7 +120,7 @@ export default function Footer() {
           items-center gap-4
           text-sm text-neutral-500 dark:text-neutral-400
         ">
-          <p>© {new Date().getFullYear()} Çocuk Tribünü. Tüm hakları saklıdır.</p>
+          <p>© {new Date().getFullYear()} KUZEYBATI INTERNATIONAL Tüm hakları saklıdır.</p>
 
           {/* --- SAĞ ALTA EKLEDİĞİN TERRA YAZILIMI ALANI --- */}
           <div className="flex items-center gap-2 text-xs text-neutral-400 dark:text-neutral-500">
