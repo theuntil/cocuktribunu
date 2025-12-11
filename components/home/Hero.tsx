@@ -133,7 +133,7 @@ export default function Hero() {
             className="flex flex-row gap-4 justify-center mt-10"
           >
             <Link
-              href="/join"
+              href="/cocuk-tribunu"
               className="
                 px-6 py-3 rounded-full 
                 bg-white text-black font-medium
@@ -142,7 +142,7 @@ export default function Hero() {
                 text-sm md:text-base
               "
             >
-              Projeye Katıl
+              Projeye Hakkında
             </Link>
 
             {/* POPUP BUTON */}
