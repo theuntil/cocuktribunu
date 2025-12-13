@@ -106,7 +106,7 @@ export default function Footer() {
                   </Link>
                 </li><li>
                   <Link
-                    href="/cocuktribunu"
+                    href="/cocuk-tribunu"
                     className="text-neutral-600 dark:text-neutral-300 hover:text-[#006039] dark:hover:text-[#4D96FF] transition"
                   >
                     Proje Hakkında
