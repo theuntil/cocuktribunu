@@ -7,8 +7,15 @@ import { Figtree } from "next/font/google";
 
 export const metadata: Metadata = {
   title: "Çocuk Tribünü",
-  description: "Spor sosyal sorumluluk projesi",
+  icons: {
+    icon: "/favicon.png",  },
+  description: "Çocuk Tribünü Spor sosyal sorumluluk projesi",
+  verification: {
+    google: "X5ffxjkjmRmVY4UZyfC1SoBgqM7UZdBZRX4Ra0bFmQI",
+  },
 };
+
+
 
 const figtree = Figtree({
   subsets: ["latin"],
@@ -19,6 +26,7 @@ const figtree = Figtree({
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="tr" suppressHydrationWarning>
+    
       <body
         className={`
           ${figtree.className}
