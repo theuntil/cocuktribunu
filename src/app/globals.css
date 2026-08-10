@@ -1,0 +1,121 @@
+@import "tailwindcss";
+
+/* ═══ ÇOCUK TRİBÜNÜ — TASARIM SİSTEMİ (renkler tasarım dosyasından birebir) ═══ */
+
+:root, [data-theme="light"] {
+  --bg:#efeae1; --page:#fdfaf4; --surface:#ffffff;
+  --ink:#0f1f1a; --ink2:#4b5a53; --muted:#6c7b73; --muted2:#8a9790;
+  --line:#e4dcce; --line2:#ebe3d6; --field:#fdfaf4; --chip:#f1ece1;
+  --green:#0e7a57; --green-soft:#e7f4ee; --on-green:#ffffff;
+  --deep:#0f2a22; --deep-ink:#f2f6f1; --deep-muted:#9fb6aa; --on-dark:#c6d5cd;
+  --orange:#f4622a; --orange-soft:#fff1e6; --orange-ink:#c2521f; --orange-line:#f6d2b8; --orange-bg:#fff6ee;
+  --lime:#e8ff5a; --on-lime:#0f1f1a;
+  --solid:#0f1f1a; --on-solid:#fdfaf4; --sidebar:#0f1f1a;
+  --danger:#c0392b; --danger-soft:#fdecea;
+  --shadow:0 40px 90px -50px rgba(15,31,26,.45);
+  --shadow-sm:0 2px 8px -2px rgba(15,31,26,.08);
+}
+
+[data-theme="dark"] {
+  --bg:#000000; --page:#080908; --surface:#131513;
+  --ink:#eef2ef; --ink2:#b9c0bb; --muted:#8b948e; --muted2:#6b736d;
+  --line:#2a2e2a; --line2:#1f221f; --field:#171a17; --chip:#1f231f;
+  --green:#45dfa0; --green-soft:rgba(69,223,160,.13); --on-green:#04231a;
+  --deep:#121612; --deep-ink:#eef2ef; --deep-muted:#97a19b; --on-dark:#c3cbc6;
+  --orange:#ff9152; --orange-soft:rgba(255,145,82,.13); --orange-ink:#ffaa78;
+  --orange-line:rgba(255,145,82,.28); --orange-bg:rgba(255,145,82,.06);
+  --lime:#dff265; --on-lime:#0a1206;
+  --solid:#eef2ef; --on-solid:#080908; --sidebar:#050605;
+  --danger:#ff6b5c; --danger-soft:rgba(255,107,92,.13);
+  --shadow:0 40px 90px -50px rgba(0,0,0,.8);
+  --shadow-sm:0 2px 8px -2px rgba(0,0,0,.5);
+}
+
+@theme inline {
+  --color-bg:var(--bg); --color-page:var(--page); --color-surface:var(--surface);
+  --color-ink:var(--ink); --color-ink2:var(--ink2); --color-muted:var(--muted); --color-muted2:var(--muted2);
+  --color-line:var(--line); --color-line2:var(--line2); --color-field:var(--field); --color-chip:var(--chip);
+  --color-green:var(--green); --color-green-soft:var(--green-soft); --color-on-green:var(--on-green);
+  --color-deep:var(--deep); --color-deep-ink:var(--deep-ink); --color-deep-muted:var(--deep-muted); --color-on-dark:var(--on-dark);
+  --color-orange:var(--orange); --color-orange-soft:var(--orange-soft); --color-orange-ink:var(--orange-ink);
+  --color-orange-line:var(--orange-line); --color-orange-bg:var(--orange-bg);
+  --color-lime:var(--lime); --color-on-lime:var(--on-lime);
+  --color-solid:var(--solid); --color-on-solid:var(--on-solid); --color-sidebar:var(--sidebar);
+  --color-danger:var(--danger); --color-danger-soft:var(--danger-soft);
+  --font-display:var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
+  --font-sans:var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  --radius-card:26px; --radius-panel:20px; --radius-field:12px;
+}
+
+* { box-sizing:border-box; }
+html {
+  scroll-behavior:smooth;
+  -webkit-text-size-adjust:100%;
+  /* Sayfa geçişlerinde beyaz flaş olmaması için kök öğe de boyanır */
+  background:var(--page);
+  color-scheme:light;
+}
+html[data-theme="dark"] { color-scheme:dark; }
+body {
+  margin:0; min-height:100dvh; background:var(--page); color:var(--ink);
+  font-family:var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+}
+::selection { background:var(--lime); color:var(--on-lime); }
+:focus-visible { outline:2px solid var(--green); outline-offset:2px; border-radius:6px; }
+
+/* ── ANİMASYONLAR: sade, hızlı, GPU dostu ── */
+@keyframes ct-rise { from{opacity:0;transform:translate3d(0,14px,0)} to{opacity:1;transform:none} }
+@keyframes ct-fade { from{opacity:0} to{opacity:1} }
+@keyframes ct-scale { from{opacity:0;transform:scale(.97)} to{opacity:1;transform:scale(1)} }
+@keyframes ct-slide-down { from{opacity:0;transform:translate3d(0,-8px,0)} to{opacity:1;transform:none} }
+@keyframes ct-spin { to{transform:rotate(360deg)} }
+@keyframes ct-modal-in {
+  from { opacity:0; transform:translate3d(0,18px,0) scale(.985) }
+  to   { opacity:1; transform:none }
+}
+@keyframes ct-caret { 0%,49%{opacity:1} 50%,100%{opacity:0} }
+@keyframes ct-shimmer { 0%{background-position:-200% 0} 100%{background-position:200% 0} }
+
+.ct-rise{animation:ct-rise .42s cubic-bezier(.22,1,.36,1) both}
+.ct-fade{animation:ct-fade .3s ease both}
+.ct-scale{animation:ct-scale .28s cubic-bezier(.22,1,.36,1) both}
+.ct-slide-down{animation:ct-slide-down .22s cubic-bezier(.22,1,.36,1) both}
+.ct-spin{animation:ct-spin .7s linear infinite}
+
+.ct-stagger > *{animation:ct-rise .42s cubic-bezier(.22,1,.36,1) both}
+.ct-stagger > *:nth-child(1){animation-delay:.02s}
+.ct-stagger > *:nth-child(2){animation-delay:.06s}
+.ct-stagger > *:nth-child(3){animation-delay:.1s}
+.ct-stagger > *:nth-child(4){animation-delay:.14s}
+.ct-stagger > *:nth-child(5){animation-delay:.18s}
+.ct-stagger > *:nth-child(6){animation-delay:.22s}
+.ct-stagger > *:nth-child(7){animation-delay:.26s}
+.ct-stagger > *:nth-child(8){animation-delay:.3s}
+.ct-stagger > *:nth-child(n+9){animation-delay:.34s}
+
+.ct-reveal{
+  opacity:0; transform:translate3d(0,18px,0);
+  transition:opacity .5s cubic-bezier(.22,1,.36,1), transform .5s cubic-bezier(.22,1,.36,1);
+  will-change:opacity,transform;
+}
+.ct-reveal[data-visible="true"]{opacity:1;transform:none}
+
+.ct-skeleton{
+  background:linear-gradient(90deg,var(--chip) 25%,var(--line2) 37%,var(--chip) 63%);
+  background-size:400% 100%; animation:ct-shimmer 1.3s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation-duration:.01ms !important; animation-iteration-count:1 !important;
+    transition-duration:.01ms !important; scroll-behavior:auto !important;
+  }
+  .ct-reveal{opacity:1;transform:none}
+}
+
+.ct-eyebrow{font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted2)}
+.ct-scrollbar::-webkit-scrollbar{width:10px;height:10px}
+.ct-scrollbar::-webkit-scrollbar-track{background:transparent}
+.ct-scrollbar::-webkit-scrollbar-thumb{background:var(--line);border-radius:999px;border:3px solid var(--page)}
+input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{appearance:none;margin:0}
